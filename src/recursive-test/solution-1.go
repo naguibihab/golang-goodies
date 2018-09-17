@@ -11,21 +11,26 @@ const comma = 44
 const close = 93
 
 func parse(v string) (*node, string, error) {
+	// To see this in action, uncomment the logs
+
 	rem := v
 	root := &node{}
 	root.Name = ""
 	
+	// Take the leftmost group of letters
 	r, _ := regexp.Compile("\\w*")
 	root.Name = r.FindString(rem)
 	
 	// log.Printf("Found name %s in %s",root.Name,rem)
 	
+	// If there was anything found, then remove it from the string
 	if(len(root.Name) > 0) {
 		rem = rem[len(root.Name):]
 	}
 	
 	// log.Printf("Rem is now %s",rem)
 	
+	// Iterate on each character in the string till it's done or till break
 	for len(rem) > 0 {
 		currentChar := rem[0]
 		
@@ -53,6 +58,8 @@ func parse(v string) (*node, string, error) {
 			rem = newRem
 			root.Children = append(root.Children,child)
 		}
+
+		// Remove the current character that I (or child) have iterated on
 		rem = rem[1:]
 	}
 
@@ -67,6 +74,9 @@ type node struct {
 var examples = []string{
 	"[a,b,c]",
 	"[a[aa[aaa],ab,ac],b,c[ca,cb,cc[cca]]]",
+	"[z,[zz[zz[zz[zz[zz[zz[zz[zz]]]]]]]]]]",
+	"[z]",
+	"[zzzzzzzzzzz[zz]]",
 }
 
 func main() {
