@@ -21,13 +21,13 @@ RECURSE
 			aaa],ab,ac],b,c[ca,cb,cc[cca]]]
 			],ab,ac],b,c[ca,cb,cc[cca]]]
 			RETURN
-		,ab,ac],b,c[ca,cb,cc[cca]]] <-------- *2
+		,ab,ac],b,c[ca,cb,cc[cca]]]
 		ab,ac],b,c[ca,cb,cc[cca]]]
 		,ac],b,c[ca,cb,cc[cca]]]
 		ac],b,c[ca,cb,cc[cca]]]
 		],b,c[ca,cb,cc[cca]]]
 		RETURN
-	,b,c[ca,cb,cc[cca]]]
+	,b,c[ca,cb,cc[cca]]] <-------- *2
 	b,c[ca,cb,cc[cca]]]
 	,c[ca,cb,cc[cca]]]
 	c[ca,cb,cc[cca]]]
